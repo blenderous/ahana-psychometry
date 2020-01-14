@@ -15,10 +15,10 @@ export default class Home extends Component {
                             </div>
                             </div>
                         </form>
-                        <p className="text-below-search-bar"><Link to={'/create'}>Proceed to Asssessments</Link></p>
+                        <p className="text-below-search-bar"><Link to={'/ahana-psychometry/create'}>Proceed to Asssessments</Link></p>
                     </div>
                 </div>
-                <a href="/" className="logo-link"><img src="/logo-ahana.png" alt="Ahana : Experience the exceptional care"/></a>
+                <a href="/ahana-psychometry/" className="logo-link"><img src="/logo-ahana.png" alt="Ahana : Experience the exceptional care"/></a>
             </div>
         )
     }
