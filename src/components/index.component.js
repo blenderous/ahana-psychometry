@@ -48,8 +48,11 @@ export default class Index extends Component {
     render() {
         return (
             <div className='container result-page'>
-                <h1>Result</h1>
+                <h1>Psychological Report</h1>
                 <div className="row">
+                    <div className="col-md-12">
+                        <p className="print-btn-container"><button onClick={window.print} className="btn btn-primary">Print</button></p>
+                    </div>
                     <div className="col-md-12">
                         <p><span className="bold">UHID: </span>{localStorage.getItem('uhid')}</p>
                     </div>
@@ -98,7 +101,6 @@ export default class Index extends Component {
                     <textarea id="comment"></textarea>
                     <p className="submit-btn-container"><input type="submit" value="Add Comment" className="btn btn-primary"/></p>
                 </form>
-                <p className="print-btn-container"><button onClick={window.print} className="btn btn-primary">Print</button></p>
             </div>
         )
     }
