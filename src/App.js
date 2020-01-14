@@ -25,14 +25,14 @@ function App() {
           </nav>
 
           <Switch>
-              <Route exact  path='/ahana-psychometry/create' component={ Create } />
-              <Route exact  path='/ahana-psychometry/edit/:id' component={ Edit } />
-              <Route exact  path='/ahana-psychometry/index' component={ Index } />
-              <Route exact  exact path='/ahana-psychometry/' component={ Home } />
-              <Route exact  exact path='/ahana-psychometry/assessments/' component={ Assessments } />
-              <Route exact  path='/ahana-psychometry/assessments/01' component={ Assessment_01 } />
-              <Route exact  path='/ahana-psychometry/assessments/02' component={ Assessment_02 } />
-              <Route exact  path='/ahana-psychometry/assessments/03' component={ Assessment_03 } />
+              <Route exact path='/ahana_psychometry/create' component={ Create } />
+              <Route path='/ahana_psychometry/edit/:id' component={ Edit } />
+              <Route path='/ahana_psychometry/index' component={ Index } />
+              <Route exact path='/ahana_psychometry/' component={ Home } />
+              <Route exact path='/ahana_psychometry/assessments/' component={ Assessments } />
+              <Route path='/ahana_psychometry/assessments/01' component={ Assessment_01 } />
+              <Route path='/ahana_psychometry/assessments/02' component={ Assessment_02 } />
+              <Route path='/ahana_psychometry/assessments/03' component={ Assessment_03 } />
           </Switch>
         </div>
     </Router>
