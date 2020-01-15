@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import './App.css';
 
 import Create from './components/create.component';
-import Edit from './components/edit.component';
+// import Edit from './components/edit.component';
 import Index from './components/index.component';
 import Home from './components/home.component';
 import Assessments from './components/assessments.component';
