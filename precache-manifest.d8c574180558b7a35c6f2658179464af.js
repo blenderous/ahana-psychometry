@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "8e28302c8bbff839bc67ef2cca04839e",
+    "revision": "e82ec6ad43bfdf113bd217f3505b045e",
     "url": "/ahana-psychometry/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/ahana-psychometry/static/css/2.47e06e2e.chunk.css"
   },
   {
-    "revision": "fbd52847549ebd10eb4f",
+    "revision": "36de8bcfe49082c5f569",
     "url": "/ahana-psychometry/static/css/main.a883f588.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/ahana-psychometry/static/js/2.18ef6a04.chunk.js"
   },
   {
-    "revision": "fbd52847549ebd10eb4f",
-    "url": "/ahana-psychometry/static/js/main.ccb9d285.chunk.js"
+    "revision": "36de8bcfe49082c5f569",
+    "url": "/ahana-psychometry/static/js/main.63c2ef07.chunk.js"
   },
   {
     "revision": "2dedeff07363e90ebf7c",
