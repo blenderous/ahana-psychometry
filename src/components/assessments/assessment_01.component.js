@@ -98,7 +98,8 @@ export default class Assessment_01 extends Component {
             console.log('filled all');
             localStorage.setItem('total', sum);
             localStorage.setItem('assessment', 'Beck\'s Depression Inventory');
-            window.location.href = "/ahana-psychometry/index";
+            // window.location.href = "/ahana-psychometry/index";
+            this.props.history.push('/ahana-psychometry/index');
         }
     }
     render() {

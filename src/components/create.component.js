@@ -1,4 +1,22 @@
 import React, { Component } from 'react';
+// import { Link } from 'react-router-dom';
+// import { Route } from 'react-router-dom';
+
+// const AssementsButton = () => (
+//   <Route render={({ history}) => (
+//     <button
+//       type='button'
+//       onClick={() => { history.push('/ahana-psychometry/assessments') }}
+//     >
+//       Submit
+//     </button>
+//   )} />
+// )
+
+// function assessmentsButton() {
+//   let history = useHistory();
+//   history.push('/ahana-psychometry/assessments');
+// };
 
 export default class Create extends Component {
     constructor(props) {
@@ -342,7 +360,8 @@ export default class Create extends Component {
         localStorage.setItem('marital_status', this.state.maritalStatus);
         localStorage.setItem('employment_status', this.state.employmentStatus);
         localStorage.setItem('referal_doctor', this.state.referalDoctor);
-        window.location.href = "/ahana-psychometry/assessments/";
+        // window.location.href = "/ahana-psychometry/assessments/";
+        this.props.history.push('/ahana-psychometry/assessments/');
       }
     }
 
@@ -490,6 +509,7 @@ export default class Create extends Component {
                       <div className="form-group">
                           <input type="submit" value="Submit" className="btn btn-primary"/>
                       </div>
+                      {/* <AssementsButton></AssementsButton> */}
                 </form>
             </div>
         )

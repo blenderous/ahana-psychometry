@@ -182,15 +182,15 @@ form.person-details {
 }
 
 form.person-details .form-group .btn-primary[type="submit"] {
-  margin-top: 34px;
+  /* margin-top: 34px; */
 }
 
 form.person-details .form-feedback {
-  position: absolute;
+  /* position: absolute;
   top: auto;
   left: 0;
   width: 100%;
-  bottom: 34px;
+  bottom: 73px; */
 }
 
 .assessments > ul {
