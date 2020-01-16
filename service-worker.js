@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/ahana-psychometry/precache-manifest.0f59d1039c126fd2c2127c09612868e1.js"
+  "/ahana-psychometry/precache-manifest.e9961cfaeacfcd6563ea22c63620ba56.js"
 );
 
 self.addEventListener('message', (event) => {
