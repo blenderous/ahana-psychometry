@@ -201,6 +201,11 @@ form.person-details .form-feedback {
 
 .assessments > ul > li {
   display: inline-block;
+  margin-right: 20px;
+}
+
+.assessments > ul > li:last-child {
+  margin-right: 0;
 }
 
 .assessments > ul > li a {
@@ -251,7 +256,7 @@ form.depression-metrics ul {
 }
 
 form.depression-metrics .question {
-  margin-top: 60px;
+  margin-bottom: 60px;
 }
 
 form.depression-metrics label input[type="radio"] {
@@ -259,7 +264,10 @@ form.depression-metrics label input[type="radio"] {
 }
 
 form.depression-metrics p{
-  margin-bottom: 60px;
+  margin-bottom: 20px;
+}
+
+form.depression-metrics > p {
   text-align: center;
 }
 
@@ -346,4 +354,9 @@ form.depression-metrics p .btn{
   .result-page form textarea {
     display: none;
   }
+}
+
+.custom-radio-container .custom-control.custom-radio {
+  display: inline-block;
+  margin-right: 20px;
 }

@@ -6,6 +6,7 @@ export default class Index extends Component {
 
         this.getDate = this.getDate.bind(this);
         this.getImpression = this.getImpression.bind(this);
+        this.getNormalReferance = this.getNormalReferance.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
     getDate() {
@@ -16,23 +17,43 @@ export default class Index extends Component {
     }
     getImpression() {
         let score = localStorage.getItem('total');
-        if (score >= 1 && score < 11) {
-            return "These ups and downs are considered normal";
+        if (localStorage.getItem('assessment') === "Beck's Depression Inventory") {
+            if (score >= 1 && score < 11) {
+                return "These ups and downs are considered normal";
+            }
+            else if (score >= 11 && score < 17) {
+                return "Mild mood disturbance";
+            }
+            else if (score >= 17 && score < 21) {
+                return "Borderline clinical depression";
+            }
+            else if (score >= 21 && score < 31) {
+                return "Moderate depression";
+            }
+            else if (score >= 31 && score < 41) {
+                return "Severe depression";
+            }
+            else if (score >= 41) {
+                return "Extreme depression";
+            }
         }
-        else if (score >= 11 && score < 17) {
-            return "Mild mood disturbance";
+        else if (localStorage.getItem('assessment') === "Beck's Anxiety Inventory") {
+            if (score >=0 && score <= 21) {
+                return "A grand sum between 0 - 21 indicates very low anxiety. That is usually a good thing. However it is possible that you might be unrealistic in either your assessment which would be denial or that you have learned to \"mask\" the symptoms commonly associated with anxiety. Too little \"anxiety\" could indicate that you are detached from yourself, others or your environment."
+            }
+            else if (score > 21 && score <= 35) {
+                return "A grand sum between 22-35 indicates moderate anxiety. Your body is trying to tell you something. Look for patterns as to when and why you experience the symptoms described before. For example, if it occurss prior to public speaking and your job requires a lot of presentations, you may want to find ways to calm yourself before speaking or let others do some of the presentations. You may have some conflict issues that need to be resolved. Clearly, it's not \"panic\" time but you want to find ways to manage the stress you feel."
+            }
+            else if (score >= 36) {
+                return "A grand sum that exeeds 36 is a potential cause for concern. Look for patterns or times when you tend to feel the symptoms you have selected. Persistent and high anxiety is not a sign of personal weakness or failure. It is, however, something that needs to be proactively treated or there could be significant impacts to you mentally and physically. You may want to consult a counselor if the feelings persist."
+            }
         }
-        else if (score >= 17 && score < 21) {
-            return "Borderline clinical depression";
-        }
-        else if (score >= 21 && score < 31) {
-            return "Moderate depression";
-        }
-        else if (score >= 31 && score < 41) {
-            return "Severe depression";
-        }
-        else if (score >= 41) {
-            return "Extreme depression";
+    }
+    getNormalReferance() {
+        if (localStorage.getItem('assessment') === "Beck's Depression Inventory") {
+            return "1 - 10 These ups and downs are considered normal \n11 - 16 Mild mood disturbance \n17 -20 Borderline clinical depression\n21 - 30 Moderate depression\n31 - 40 Severe depression\nOver 40 Extreme depression"
+        } else if (localStorage.getItem('assessment') === "Beck's Anxiety Inventory") {
+            return "A grand sum between 0 -21 indicates very low anxiety\n A grand sum between 22-35 indicates moderate anxiety\n A grand sum that exeeds 36 is a potential cause for concern"
         }
     }
     handleSubmit(e) {
@@ -85,12 +106,7 @@ export default class Index extends Component {
                             <td>{localStorage.getItem('assessment')}</td>
                             <td>{this.getDate()}</td>
                             <td>{localStorage.getItem('total')}</td>
-                            <td>1 - 10 These ups and downs are considered normal <br/>
-                                11 - 16 Mild mood disturbance<br/>
-                                17 -20 Borderline clinical depression<br/>
-                                21 - 30 Moderate depression<br/>
-                                31 - 40 Severe depression<br/>
-                                Over 40 Extreme depression
+                            <td>{this.getNormalReferance()}
                             </td>
                         </tr>
                     </tbody>

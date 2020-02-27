@@ -1,22 +1,5 @@
 import React, { Component } from 'react';
 // import { Link } from 'react-router-dom';
-// import { Route } from 'react-router-dom';
-
-// const AssementsButton = () => (
-//   <Route render={({ history}) => (
-//     <button
-//       type='button'
-//       onClick={() => { history.push('/ahana-psychometry/assessments') }}
-//     >
-//       Submit
-//     </button>
-//   )} />
-// )
-
-// function assessmentsButton() {
-//   let history = useHistory();
-//   history.push('/ahana-psychometry/assessments');
-// };
 
 export default class Create extends Component {
     constructor(props) {
@@ -25,6 +8,9 @@ export default class Create extends Component {
         this.onBlurUHID = this.onBlurUHID.bind(this);
         this.onFocusUHID = this.onFocusUHID.bind(this);
         this.onChangeUHID = this.onChangeUHID.bind(this);
+        // sex
+        this.onFocusSex = this.onFocusSex.bind(this);
+        this.onChangeSex = this.onChangeSex.bind(this);
         // FirstName
         this.onBlurFirstname = this.onBlurFirstname.bind(this);
         this.onFocusFirstname = this.onFocusFirstname.bind(this);
@@ -63,6 +49,8 @@ export default class Create extends Component {
         this.state = {
             UHID: '',
             UHIDBlank: undefined,
+            sex: '',
+            sexBlank: undefined,
             personFirstname: '',
             firstnameBlank: undefined,
             personLastname: '',
@@ -102,6 +90,19 @@ export default class Create extends Component {
       this.setState({ UHID: e.target.value})
     }
     // UHID ends here
+
+    // sex begins here
+    onFocusSex() {
+      this.setState({ sexBlank : false })
+    }
+
+    onChangeSex(e) {
+      this.setState({
+        sex: e.target.value
+      });
+      console.log('here');
+    }
+    // sex ends here
 
     // Firstname begins here
     onFocusFirstname(e) {
@@ -352,6 +353,7 @@ export default class Create extends Component {
       else {
         this.setState({allFilled:true});
         localStorage.setItem('uhid', this.state.UHID);
+        localStorage.setItem('sex', this.state.sex);
         localStorage.setItem('firstname', this.state.personFirstname);
         localStorage.setItem('lastname', this.state.personLastname);
         localStorage.setItem('age', this.state.age);
@@ -367,6 +369,7 @@ export default class Create extends Component {
 
     render() {
         let classNameUHID = this.state.UHIDBlank ? "form-group error" : "form-group";
+        let classNameSex = this.state.sex ? "form-group error" : "form-group";
         let classNameFirstname = this.state.firstnameBlank ? "form-group error" : "form-group";
         let classNameLastname = this.state.lastnameBlank ? "form-group error" : "form-group";
         let classNameAge = this.state.ageBlank ? "form-group error" : "form-group";
@@ -387,6 +390,26 @@ export default class Create extends Component {
                             onChange={this.onChangeUHID}
                             onFocus={this.onFocusUHID} 
                             onBlur={this.onBlurUHID}/>
+                          </div>
+                      </div>
+                      <div className="col">
+                        <label>Sex</label>
+                        <div className="custom-radio-container">
+                            <div className="custom-control custom-radio">
+                              <input
+                                onChange={this.onChangeSex}
+                                onFocus={this.onFocusSex}
+                                type="radio" className="custom-control-input" id="defaultChecked" checked name="sex"/>
+                              <label className="custom-control-label" htmlFor="defaultChecked">Male</label>
+                            </div>
+                            <div className="custom-control custom-radio">
+                              <input type="radio" className="custom-control-input" id="defaultUnchecked1" name="sex"/>
+                              <label className="custom-control-label" htmlFor="defaultUnchecked1">Female</label>
+                            </div>
+                            <div className="custom-control custom-radio">
+                              <input type="radio" className="custom-control-input" id="defaultChecked2" name="sex"/>
+                              <label className="custom-control-label" htmlFor="defaultChecked2">Other</label>
+                            </div>
                           </div>
                       </div>
                     </div>
