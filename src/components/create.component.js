@@ -390,7 +390,6 @@ export default class Create extends Component {
 
     render() {
         let classNameUHID = this.state.UHIDBlank ? "form-group error" : "form-group";
-        let classNameSex = this.state.sex ? "form-group error" : "form-group";
         let classNameFirstname = this.state.firstnameBlank ? "form-group error" : "form-group";
         let classNameLastname = this.state.lastnameBlank ? "form-group error" : "form-group";
         let classNameAge = this.state.ageBlank ? "form-group error" : "form-group";
@@ -415,21 +414,38 @@ export default class Create extends Component {
                           </div>
                       </div>
                       <div className="col">
-                        <label>Sex</label>
+                        <label>Gender</label>
                         <div className="custom-radio-container">
-                            <div className="custom-control custom-radio">
+                            {/* <div className={classNameSex}>
                               <input
                                 onChange={this.onChangeSex}
                                 onFocus={this.onFocusSex}
-                                type="radio" className="custom-control-input" id="defaultChecked" checked name="sex"/>
+                                onBlur={this.onBlurSex}
+                                type="radio" className="custom-control-input" id="defaultChecked" name="sex"/>
                               <label className="custom-control-label" htmlFor="defaultChecked">Male</label>
+                            </div> */}
+                            <div className="custom-control custom-radio">
+                              <input 
+                                onChange={this.onChangeSex}
+                                onFocus={this.onFocusSex}
+                                onBlur={this.onBlurSex}
+                                type="radio" className="custom-control-input" id="defaultUnchecked0" name="sex"/>
+                              <label className="custom-control-label" htmlFor="defaultUnchecked0">Male</label>
                             </div>
                             <div className="custom-control custom-radio">
-                              <input type="radio" className="custom-control-input" id="defaultUnchecked1" name="sex"/>
+                              <input 
+                                onChange={this.onChangeSex}
+                                onFocus={this.onFocusSex}
+                                onBlur={this.onBlurSex}
+                                type="radio" className="custom-control-input" id="defaultUnchecked1" name="sex"/>
                               <label className="custom-control-label" htmlFor="defaultUnchecked1">Female</label>
                             </div>
                             <div className="custom-control custom-radio">
-                              <input type="radio" className="custom-control-input" id="defaultChecked2" name="sex"/>
+                              <input 
+                                onChange={this.onChangeSex}
+                                onFocus={this.onFocusSex}
+                                onBlur={this.onBlurSex}
+                                type="radio" className="custom-control-input" id="defaultChecked2" name="sex"/>
                               <label className="custom-control-label" htmlFor="defaultChecked2">Other</label>
                             </div>
                           </div>
@@ -455,22 +471,16 @@ export default class Create extends Component {
                                 onFocus={this.onFocusLastname}
                                 onBlur={this.onBlurLastname}/>
                           </div>
-                        </div>
+                      </div>
                       </div>
                     <div className="form-row">
                         <div className="col">
-                          <div className={classNameSex}>
-                            <p>Gender</p>
-                            <input value="male" onFocus={this.onFocusSex} onBlur={this.onBlurSex} onChange={this.onChangeSex} type="radio" id="male" name="gender"/>
-                            <label htmlFor="male">Male</label>
-                            <input value="female" onFocus={this.onFocusSex} onBlur={this.onBlurSex} onChange={this.onChangeSex} type="radio" id="female" name="gender"/>
-                            <label htmlFor="female">Female</label>
-                            <input value="other" onFocus={this.onFocusSex} onBlur={this.onBlurSex} onChange={this.onChangeSex} type="radio" id="other" name="gender"/>
-                            <label htmlFor="other">Other</label> 
-                            {/* {/* value = {this.state.sex} */}
-                            {/*onChange={this.onChangeSex} 
-                            onFocus={this.onFocusSex}
-                            onBlur={this.onBlurSex}/> */}
+                          <div className={classNameAge} >
+                            <label>Age</label>
+                            <input type="text" className="form-control"
+                              onChange={this.onChangeAge}
+                              onFocus={this.onFocusAge} 
+                              onBlur={this.onBlurAge}/>
                           </div>
                         </div>
                         <div className="col">
