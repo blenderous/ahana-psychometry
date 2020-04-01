@@ -19,6 +19,10 @@ export default class Create extends Component {
         this.onBlurLastname = this.onBlurLastname.bind(this);
         this.onFocusLastname = this.onFocusLastname.bind(this);
         this.onChangeLastname = this.onChangeLastname.bind(this);
+        // Sex
+        this.onBlurSex = this.onBlurSex.bind(this);
+        this.onFocusSex = this.onFocusSex.bind(this);
+        this.onChangeSex = this.onChangeSex.bind(this);
         // Age
         this.onBlurAge = this.onBlurAge.bind(this);
         this.onFocusAge = this.onFocusAge.bind(this);
@@ -91,16 +95,32 @@ export default class Create extends Component {
     }
     // UHID ends here
 
-    // sex begins here
-    onFocusSex() {
-      this.setState({ sexBlank : false })
-    }
+    // Sex starts here
 
+    onFocusSex(e) {
+      // console.log('focus',e)
+      if (e.target.value !== "") {
+        this.setState({ sexBlank : false })
+        this.setState({ sex: e.target.value})
+      }
+    }
+    onBlurSex(e){
+      // console.log('blur',e.target.value)
+      if (e.target.value === "") {
+        this.setState({
+          sexBlank : true
+        });
+      }
+      else {
+        this.setState({
+          sexBlank : false
+        });
+      }
+    }
     onChangeSex(e) {
-      this.setState({
-        sex: e.target.value
-      });
-      console.log('here');
+      console.log('change',e.target.value)
+      this.setState({ sex: e.target.value})
+      console.log(this.state.sex);
     }
     // sex ends here
 
@@ -308,7 +328,8 @@ export default class Create extends Component {
       e.preventDefault();
       console.log(`The values are ${this.state.UHID}, 
       ${this.state.personFirstname}, 
-      ${this.state.personLastname},
+      ${this.state.personLastname}, 
+      ${this.state.sex}, 
       ${this.state.age},
       ${this.state.qualification},
       ${this.state.SES},
@@ -373,6 +394,7 @@ export default class Create extends Component {
         let classNameFirstname = this.state.firstnameBlank ? "form-group error" : "form-group";
         let classNameLastname = this.state.lastnameBlank ? "form-group error" : "form-group";
         let classNameAge = this.state.ageBlank ? "form-group error" : "form-group";
+        let classNameSex = this.state.sex !== "" ? "radio-group form-group" : "radio-group form-group error";
         let classNameQualification = this.state.qualificationBlank ? "form-group error" : "form-group";
         let classNameSES = this.state.SESBlank ? "form-group error" : "form-group";
         let classNameMaritalStatus = this.state.maritalStatusBlank ? "form-group error" : "form-group";
@@ -437,13 +459,18 @@ export default class Create extends Component {
                       </div>
                     <div className="form-row">
                         <div className="col">
-                          <div className={classNameAge}>
-                            <label>Age  </label>
-                            <input type="text" className="form-control"
-                            value = {this.state.personAge}
-                            onChange={this.onChangeAge}
-                            onFocus={this.onFocusAge}
-                            onBlur={this.onBlurAge}/>
+                          <div className={classNameSex}>
+                            <p>Gender</p>
+                            <input value="male" onFocus={this.onFocusSex} onBlur={this.onBlurSex} onChange={this.onChangeSex} type="radio" id="male" name="gender"/>
+                            <label htmlFor="male">Male</label>
+                            <input value="female" onFocus={this.onFocusSex} onBlur={this.onBlurSex} onChange={this.onChangeSex} type="radio" id="female" name="gender"/>
+                            <label htmlFor="female">Female</label>
+                            <input value="other" onFocus={this.onFocusSex} onBlur={this.onBlurSex} onChange={this.onChangeSex} type="radio" id="other" name="gender"/>
+                            <label htmlFor="other">Other</label> 
+                            {/* {/* value = {this.state.sex} */}
+                            {/*onChange={this.onChangeSex} 
+                            onFocus={this.onFocusSex}
+                            onBlur={this.onBlurSex}/> */}
                           </div>
                         </div>
                         <div className="col">

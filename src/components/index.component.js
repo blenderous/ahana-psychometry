@@ -4,6 +4,7 @@ export default class Index extends Component {
     constructor(props) {
         super(props);
 
+        this.getAssessment = this.getAssessment.bind(this);
         this.getDate = this.getDate.bind(this);
         this.getImpression = this.getImpression.bind(this);
         this.getNormalReferance = this.getNormalReferance.bind(this);
@@ -17,7 +18,8 @@ export default class Index extends Component {
     }
     getImpression() {
         let score = localStorage.getItem('total');
-        if (localStorage.getItem('assessment') === "Beck's Depression Inventory") {
+
+        if (localStorage.getItem('assessment') === 'becks-depression-inventory') {
             if (score >= 1 && score < 11) {
                 return "These ups and downs are considered normal";
             }
@@ -37,23 +39,32 @@ export default class Index extends Component {
                 return "Extreme depression";
             }
         }
-        else if (localStorage.getItem('assessment') === "Beck's Anxiety Inventory") {
-            if (score >=0 && score <= 21) {
-                return "A grand sum between 0 - 21 indicates very low anxiety. That is usually a good thing. However it is possible that you might be unrealistic in either your assessment which would be denial or that you have learned to \"mask\" the symptoms commonly associated with anxiety. Too little \"anxiety\" could indicate that you are detached from yourself, others or your environment."
+        else if (localStorage.getItem('assessment') === 'becks-anxiety-inventory') {
+            if (score >= 0 && score >= 21) {
+                return "A grand sum between 0-21 indicates very low anxiety. That is usually a good thing. However it is possible that you might be unrealistic in either your assessment which would be denial or that you have learned to \"mask\" the symptoms commonly associated with anxiety. Too little \"anxiety\" could indicate that you are detached from yourself, others or your environment"
             }
-            else if (score > 21 && score <= 35) {
-                return "A grand sum between 22-35 indicates moderate anxiety. Your body is trying to tell you something. Look for patterns as to when and why you experience the symptoms described before. For example, if it occurss prior to public speaking and your job requires a lot of presentations, you may want to find ways to calm yourself before speaking or let others do some of the presentations. You may have some conflict issues that need to be resolved. Clearly, it's not \"panic\" time but you want to find ways to manage the stress you feel."
+            else if (score >= 22 && score <= 35 ) {
+                return "A grand some between 22 - 35 indicates moderate anxiety. Your body is trying to tell you something. Look for patterns as to when and why you experience the sympoms describe above. For example, if it occurs prior to public speaking and your job requires a lot of presentations, you might want to find ways to calm yourself before speaking or let others do some of the presentations. You may have some conflict issues that need to be resolved. Clearly, it is not \"panic\" time but you want to find ways to manage the stress you feel."
             }
-            else if (score >= 36) {
-                return "A grand sum that exeeds 36 is a potential cause for concern. Look for patterns or times when you tend to feel the symptoms you have selected. Persistent and high anxiety is not a sign of personal weakness or failure. It is, however, something that needs to be proactively treated or there could be significant impacts to you mentally and physically. You may want to consult a counselor if the feelings persist."
+            else if (score >= 36 ) {
+                return "A grand sum that exeeds 36 is a potential cause for concern. Again, look for patterns or times when you tend to feel the symptoms you have circled. Persistent and high anxiety is not a sign of personal weakness or failure. It is, however, something that needs to be proactively treated or there could be significant impacts to you mentally and physically. You may want to consult a couselor if the feeling persist."
             }
         }
     }
     getNormalReferance() {
-        if (localStorage.getItem('assessment') === "Beck's Depression Inventory") {
-            return "1 - 10 These ups and downs are considered normal \n11 - 16 Mild mood disturbance \n17 -20 Borderline clinical depression\n21 - 30 Moderate depression\n31 - 40 Severe depression\nOver 40 Extreme depression"
-        } else if (localStorage.getItem('assessment') === "Beck's Anxiety Inventory") {
-            return "A grand sum between 0 -21 indicates very low anxiety\n A grand sum between 22-35 indicates moderate anxiety\n A grand sum that exeeds 36 is a potential cause for concern"
+        if (localStorage.getItem('assessment') === 'becks-depression-inventory') {
+            return "1 - 10 These ups and downs are considered normal\n 11 - 16 Mild mood disturbance\n 17 -20 Borderline clinical depression\n 21 - 30 Moderate depression\n 31 - 40 Severe depression\n Over 40 Extreme depression"
+        }
+        else if (localStorage.getItem('assessment') === 'becks-anxiety-inventory') {
+            return "A grand sum between 0 - 21 indicates very low anxiety. \n A grand sum between 22-35 indicates moderate anxiety. \n A grand sum that exeeds 36 is a potential cause for concern.";
+        }
+    }
+    getAssessment() {
+        if (localStorage.getItem('assessment') === 'becks-depression-inventory') {
+            return "Beck's Depression Inventory"
+        }
+        else if (localStorage.getItem('assessment') === 'becks-anxiety-inventory') {
+            return "Beck's Anxiety Inventory";
         }
     }
     handleSubmit(e) {
@@ -83,6 +94,7 @@ export default class Index extends Component {
                         <p><span className="bold">First Name: </span>{localStorage.getItem('firstname')}</p>
                         <p><span className="bold">Last Name: </span>{localStorage.getItem('lastname')}</p>
                         <p><span className="bold">Age: </span>{localStorage.getItem('age')}</p>
+                        <p><span className="bold">Sex: </span>{localStorage.getItem('sex')}</p>
                         <p><span className="bold">Referal Doctor: </span>{localStorage.getItem('referal_doctor')}</p>
                     </div>
                     <div className="col-md-4">
@@ -103,10 +115,11 @@ export default class Index extends Component {
                     </thead>
                     <tbody>
                         <tr>
-                            <td>{localStorage.getItem('assessment')}</td>
+                            <td>{this.getAssessment()}</td>
                             <td>{this.getDate()}</td>
                             <td>{localStorage.getItem('total')}</td>
-                            <td>{this.getNormalReferance()}
+                            <td>
+                                {this.getNormalReferance()}
                             </td>
                         </tr>
                     </tbody>

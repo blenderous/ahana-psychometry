@@ -7,15 +7,15 @@ export default class Home extends Component {
             <div className="vertically-center-outer">
                 <div className="vertically-center-middle">
                     <div className="vertically-center-inner">
-                        <form className="search-bar">
-                            <div className="input-group mb-3">
-                            <input type="text" className="form-control" placeholder="Search by ID, age or name" aria-label="Search" aria-describedby="button-addon2"/>
-                            <div className="input-group-append">
-                                <button className="btn btn-outline-primary" type="submit" id="button-addon2">Search</button>
-                            </div>
-                            </div>
-                        </form>
-                        <p className="text-below-search-bar"><Link to={'/ahana-psychometry/create'}>Proceed to Asssessments</Link></p>
+                        {/* Links to various assessments */}
+                        <div className="assessments container">
+                            <p>Choose from the following assessments</p>
+                            <ul>
+                                <li><Link to={'/ahana-psychometry/assessments/01'}>Beck's Depression Inventory</Link></li>
+                                <li><Link to={'/ahana-psychometry/assessments/02'}>Beck's Anxiety Inventory</Link></li>
+                                {/* <li><Link to={'/ahana-psychometry/assessments/03'}>Brief Psychiatric Rating Scale</Link></li> */}
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 <a href="/ahana-psychometry/" className="logo-link"><img src="/logo-ahana.png" alt="Ahana : Experience the exceptional care"/></a>

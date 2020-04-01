@@ -166,7 +166,15 @@ h2.h2-small {
 }
 
 .form-group.error label::after {
-  content: "*"
+  content: "*";
+}
+
+.radio-group.form-group.error label::after {
+  display: none;
+}
+
+.radio-group.form-group.error p::after {
+  content: "*";
 }
 
 .form-feedback.hidden{
@@ -358,5 +366,5 @@ form.depression-metrics p .btn{
 
 .custom-radio-container .custom-control.custom-radio {
   display: inline-block;
-  margin-right: 20px;
+  margin: 9px 6px 4px 9px;
 }
