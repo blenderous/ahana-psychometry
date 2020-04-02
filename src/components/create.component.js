@@ -95,35 +95,6 @@ export default class Create extends Component {
     }
     // UHID ends here
 
-    // Sex starts here
-
-    onFocusSex(e) {
-      // console.log('focus',e)
-      if (e.target.value !== "") {
-        this.setState({ sexBlank : false })
-        this.setState({ sex: e.target.value})
-      }
-    }
-    onBlurSex(e){
-      // console.log('blur',e.target.value)
-      if (e.target.value === "") {
-        this.setState({
-          sexBlank : true
-        });
-      }
-      else {
-        this.setState({
-          sexBlank : false
-        });
-      }
-    }
-    onChangeSex(e) {
-      console.log('change',e.target.value)
-      this.setState({ sex: e.target.value})
-      console.log(this.state.sex);
-    }
-    // sex ends here
-
     // Firstname begins here
     onFocusFirstname(e) {
       this.setState({ firstnameBlank : false })
@@ -197,6 +168,34 @@ export default class Create extends Component {
       })  
     }
     // age ends here
+
+    // Sex starts here
+
+    onFocusSex(e) {
+      // console.log('focus',e)
+      if (e.target.value !== "") {
+        this.setState({ sexBlank : false })
+        this.setState({ sex: e.target.value})
+      }
+    }
+    onBlurSex(e){
+      // console.log('blur',e.target.value)
+      if (e.target.value === "") {
+        this.setState({
+          sexBlank : true
+        });
+      }
+      else {
+        this.setState({
+          sexBlank : false
+        });
+      }
+    }
+    onChangeSex(e) {
+      this.setState({ sex: e.target.value})
+      console.log(this.state.sex);
+    }
+    // sex ends here
 
     // qualification begins here
     onFocusQualification(e) {
@@ -413,17 +412,42 @@ export default class Create extends Component {
                             onBlur={this.onBlurUHID}/>
                           </div>
                       </div>
+                        <div className="col">
+                          <div className={classNameFirstname}>
+                            <label>First Name</label>
+                            <input type="text" className="form-control"
+                                value = {this.state.personFirstname}
+                                onChange={this.onChangeFirstname}
+                                onFocus={this.onFocusFirstname} 
+                                onBlur={this.onBlurFirstname}/>
+                          </div>
+                        </div>
+                    </div>
+                    <div className="form-row">
+                        <div className="col">
+                          <div className={classNameLastname}>
+                            <label>Last Name</label>
+                            <input type="text" className="form-control"
+                                value = {this.state.personLastname}
+                                onChange={this.onChangeLastname}
+                                onFocus={this.onFocusLastname}
+                                onBlur={this.onBlurLastname}/>
+                          </div>
+                      </div>
+                        <div className="col">
+                          <div className={classNameAge} >
+                            <label>Age</label>
+                            <input type="text" className="form-control"
+                              onChange={this.onChangeAge}
+                              onFocus={this.onFocusAge} 
+                              onBlur={this.onBlurAge}/>
+                          </div>
+                        </div>
+                      </div>
+                    <div className="form-row">
                       <div className="col">
-                        <label>Gender</label>
-                        <div className="custom-radio-container">
-                            {/* <div className={classNameSex}>
-                              <input
-                                onChange={this.onChangeSex}
-                                onFocus={this.onFocusSex}
-                                onBlur={this.onBlurSex}
-                                type="radio" className="custom-control-input" id="defaultChecked" name="sex"/>
-                              <label className="custom-control-label" htmlFor="defaultChecked">Male</label>
-                            </div> */}
+                        <div className={classNameSex}>
+                          <p>Gender</p>
                             <div className="custom-control custom-radio">
                               <input 
                                 onChange={this.onChangeSex}
@@ -450,39 +474,6 @@ export default class Create extends Component {
                             </div>
                           </div>
                       </div>
-                    </div>
-                    <div className="form-row">
-                        <div className="col">
-                          <div className={classNameFirstname}>
-                            <label>First Name</label>
-                            <input type="text" className="form-control"
-                                value = {this.state.personFirstname}
-                                onChange={this.onChangeFirstname}
-                                onFocus={this.onFocusFirstname} 
-                                onBlur={this.onBlurFirstname}/>
-                          </div>
-                        </div>
-                        <div className="col">
-                          <div className={classNameLastname}>
-                            <label>Last Name</label>
-                            <input type="text" className="form-control"
-                                value = {this.state.personLastname}
-                                onChange={this.onChangeLastname}
-                                onFocus={this.onFocusLastname}
-                                onBlur={this.onBlurLastname}/>
-                          </div>
-                      </div>
-                      </div>
-                    <div className="form-row">
-                        <div className="col">
-                          <div className={classNameAge} >
-                            <label>Age</label>
-                            <input type="text" className="form-control"
-                              onChange={this.onChangeAge}
-                              onFocus={this.onFocusAge} 
-                              onBlur={this.onBlurAge}/>
-                          </div>
-                        </div>
                         <div className="col">
                           <div className={classNameQualification}>
                             <label htmlFor="Qualification">Qualification </label>
