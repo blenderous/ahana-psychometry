@@ -71,6 +71,7 @@ export default class Create extends Component {
             employmentStatusBlank: undefined,
             referalDoctor: '',
             referalDoctorBlank: undefined,
+            genderCounter: 0
           }
     }
 
@@ -172,28 +173,29 @@ export default class Create extends Component {
     // Sex starts here
 
     onFocusSex(e) {
-      // console.log('focus',e)
+      console.log('focus',e.target.value)
       if (e.target.value !== "") {
         this.setState({ sexBlank : false })
         this.setState({ sex: e.target.value})
       }
     }
     onBlurSex(e){
-      // console.log('blur',e.target.value)
-      if (e.target.value === "") {
-        this.setState({
-          sexBlank : true
-        });
-      }
-      else {
-        this.setState({
-          sexBlank : false
-        });
-      }
+      // if (e.target.value === "") {
+      //   this.setState({
+      //     sexBlank : true
+      //   });
+      // }
+      // else {
+      //   console.log('blur',e.target.value)
+      //   this.setState({
+      //     sexBlank : false
+      //   });
+      // }
     }
     onChangeSex(e) {
+      this.setState({ sexBlank : false })
       this.setState({ sex: e.target.value})
-      console.log(this.state.sex);
+      console.log('change', this.state.sex);
     }
     // sex ends here
 
@@ -325,6 +327,10 @@ export default class Create extends Component {
   
     onSubmit(e) {
       e.preventDefault();
+      if (this.state.genderCounter <= 0) {
+        this.setState({sexBlank: true});
+        this.setState({genderCounter: this.state.genderCounter + 1})
+      }
       console.log(`The values are ${this.state.UHID}, 
       ${this.state.personFirstname}, 
       ${this.state.personLastname}, 
@@ -392,7 +398,8 @@ export default class Create extends Component {
         let classNameFirstname = this.state.firstnameBlank ? "form-group error" : "form-group";
         let classNameLastname = this.state.lastnameBlank ? "form-group error" : "form-group";
         let classNameAge = this.state.ageBlank ? "form-group error" : "form-group";
-        let classNameSex = this.state.sex !== "" ? "radio-group form-group" : "radio-group form-group error";
+        console.log('sexBlank', this.state.sexBlank);
+        let classNameSex = this.state.sexBlank === true ? "radio-group form-group error" : "radio-group form-group";
         let classNameQualification = this.state.qualificationBlank ? "form-group error" : "form-group";
         let classNameSES = this.state.SESBlank ? "form-group error" : "form-group";
         let classNameMaritalStatus = this.state.maritalStatusBlank ? "form-group error" : "form-group";
@@ -453,7 +460,7 @@ export default class Create extends Component {
                                 onChange={this.onChangeSex}
                                 onFocus={this.onFocusSex}
                                 onBlur={this.onBlurSex}
-                                type="radio" className="custom-control-input" id="defaultUnchecked0" name="sex"/>
+                                type="radio" className="custom-control-input" id="defaultUnchecked0" value="Male" name="sex"/>
                               <label className="custom-control-label" htmlFor="defaultUnchecked0">Male</label>
                             </div>
                             <div className="custom-control custom-radio">
@@ -461,7 +468,7 @@ export default class Create extends Component {
                                 onChange={this.onChangeSex}
                                 onFocus={this.onFocusSex}
                                 onBlur={this.onBlurSex}
-                                type="radio" className="custom-control-input" id="defaultUnchecked1" name="sex"/>
+                                type="radio" className="custom-control-input" id="defaultUnchecked1" value="Female" name="sex"/>
                               <label className="custom-control-label" htmlFor="defaultUnchecked1">Female</label>
                             </div>
                             <div className="custom-control custom-radio">
@@ -469,7 +476,7 @@ export default class Create extends Component {
                                 onChange={this.onChangeSex}
                                 onFocus={this.onFocusSex}
                                 onBlur={this.onBlurSex}
-                                type="radio" className="custom-control-input" id="defaultChecked2" name="sex"/>
+                                type="radio" className="custom-control-input" id="defaultChecked2" value="Other" name="sex"/>
                               <label className="custom-control-label" htmlFor="defaultChecked2">Other</label>
                             </div>
                           </div>
