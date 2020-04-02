@@ -389,7 +389,7 @@ export default class Create extends Component {
         localStorage.setItem('employment_status', this.state.employmentStatus);
         localStorage.setItem('referal_doctor', this.state.referalDoctor);
         // window.location.href = "/ahana-psychometry/assessments/";
-        this.props.history.push('/ahana-psychometry/assessments/');
+        this.props.history.push('/ahana-psychometry/index/');
       }
     }
 
