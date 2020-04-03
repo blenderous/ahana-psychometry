@@ -177,6 +177,11 @@ h2.h2-small {
   content: "*";
 }
 
+.radio-group .custom-radio {
+  display: inline-block;
+  margin-right: 25px;
+}
+
 .form-feedback.hidden{
   display: none;
 }
@@ -198,6 +203,7 @@ form.person-details {
 .assessments > ul > li {
   display: inline-block;
   margin-right: 20px;
+  margin-bottom: 20px;
 }
 
 .assessments > ul > li:last-child {

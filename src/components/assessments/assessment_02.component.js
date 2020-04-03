@@ -53,7 +53,7 @@ export default class Assessment_02 extends Component {
         // It can cause bad-looking slow frames in browser performance tool, so be careful.
         percent = easing(percent)
     
-        window.scrollTo(0, startingY + diff * percent)
+        window.scrollTo(0, -80 + startingY + diff * percent)
     
             // Proceed with animation as long as we wanted it to.
             if (time < duration) {

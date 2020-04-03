@@ -40,10 +40,10 @@ export default class Index extends Component {
             }
         }
         else if (localStorage.getItem('assessment') === 'becks-anxiety-inventory') {
-            if (score >= 0 && score >= 21) {
+            if (score >= 0 && score <= 21) {
                 return "A grand sum between 0-21 indicates very low anxiety. That is usually a good thing. However it is possible that you might be unrealistic in either your assessment which would be denial or that you have learned to \"mask\" the symptoms commonly associated with anxiety. Too little \"anxiety\" could indicate that you are detached from yourself, others or your environment"
             }
-            else if (score >= 22 && score <= 35 ) {
+            else if (score > 22 && score <= 35 ) {
                 return "A grand some between 22 - 35 indicates moderate anxiety. Your body is trying to tell you something. Look for patterns as to when and why you experience the sympoms describe above. For example, if it occurs prior to public speaking and your job requires a lot of presentations, you might want to find ways to calm yourself before speaking or let others do some of the presentations. You may have some conflict issues that need to be resolved. Clearly, it is not \"panic\" time but you want to find ways to manage the stress you feel."
             }
             else if (score >= 36 ) {
