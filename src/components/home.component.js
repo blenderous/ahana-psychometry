@@ -13,7 +13,7 @@ export default class Home extends Component {
                             <ul>
                                 <li><Link to={'/ahana-psychometry/assessments/01'}>Beck's Depression Inventory</Link></li>
                                 <li><Link to={'/ahana-psychometry/assessments/02'}>Beck's Anxiety Inventory</Link></li>
-                                {/* <li><Link to={'/ahana-psychometry/assessments/03'}>Brief Psychiatric Rating Scale</Link></li> */}
+                                <li><Link to={'/ahana-psychometry/assessments/03'}>Brief Psychiatric Rating Scale (BPRS)</Link></li>
                             </ul>
                         </div>
                     </div>
