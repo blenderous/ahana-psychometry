@@ -38,7 +38,7 @@ export default class Assessment_03 extends Component {
                     <div className="">
                         <ul className="conditions-list">
                             <li className="row">
-                                <div className="selected-value col-sm-2">
+                                <div className="selected-value col-sm-1">
                                 {/* <Dropdown>
                                     <Dropdown.Toggle className="btn btn-primary" variant="success" id="dropdown-basic">
                                     Dropdown Button
@@ -60,7 +60,7 @@ export default class Assessment_03 extends Component {
                                     <option value="6">Severe</option>
                                     <option value="7">Extremely Severe</option>
                                 </select> */}
-                                <Dropdown>
+                                {/* <Dropdown>
                                     <Dropdown.Toggle variant="primary" id="dropdown-basic">
                                         Dropdown Button
                                     </Dropdown.Toggle>
@@ -70,13 +70,63 @@ export default class Assessment_03 extends Component {
                                         <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
                                         <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
                                     </Dropdown.Menu>
-                                </Dropdown>
+                                </Dropdown> */}
+                                <select id="scale-1">
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                </select>
                                 </div>
-                                <div className="condition col-sm-10">
+                                <div className="condition col-sm-11">
                                     <p>
                                         <span>1. Somatic concern</span>
                                     </p>
                                     <p>Preoccupation with physical health, fear of physical illness, hypochondriasis</p>
+                                </div>
+                            </li>
+                            <li className="row">
+                                <div className="selected-value col-sm-1">
+                                    <select id="scale-1">
+                                        <option value="0">0</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                    </select>
+                                </div>
+                                <div className="condition col-sm-11">
+                                    <p>
+                                        <span>2. Anxiety</span>
+                                    </p>
+                                    <p>Worry, fear, over-concern for present or future, uneasiness</p>
+                                </div>
+                            </li>
+                            <li className="row">
+                                <div className="selected-value col-sm-1">
+                                    <select id="scale-1">
+                                        <option value="0">0</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                    </select>
+                                </div>
+                                <div className="condition col-sm-11">
+                                    <p>
+                                        <span>3. Emotional Withdrawal</span>
+                                    </p>
+                                    <p>Lack of spontaneous interaction, isolation deficiency in relating to others.</p>
                                 </div>
                             </li>
                         </ul>

@@ -378,13 +378,11 @@ form.depression-metrics p .btn{
 }
 
 .patient-info .details-container {
-  padding-bottom: 20px;
   border-bottom: 1px solid #ffffff;
   margin-bottom: 25px;
 }
 
 .patient-info .border-bottom {
-  padding-bottom: 15px;
   border-bottom: 1px solid #ffffff;
   margin-bottom: 20px;
 }
@@ -408,6 +406,12 @@ form.depression-metrics p .btn{
   width: 100%;
 }
 
+.patient-info .conditions-list > li {
+  padding-bottom: 15px;
+  border-bottom: 1px solid #ffffff;
+  margin-top: 15px;
+}
+
 .patient-info .conditions-list .condition p {
   margin-top: 10px;
   margin-bottom: 5px;
@@ -417,6 +421,14 @@ form.depression-metrics p .btn{
   display: none;
 }
 
-@media (max-width: 570px) {
-  /*  */
+@media (min-width: 570px) {
+  .patient-info .conditions-list .condition p {
+    margin-top: 0;
+    margin-left: 15px;
+  }
+}
+
+.patient-info .conditions-list .selected-value .btn {
+  display: inline-block;
+  max-width: 100%;
 }
