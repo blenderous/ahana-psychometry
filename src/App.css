@@ -379,7 +379,8 @@ form.depression-metrics p .btn{
 
 .patient-info .details-container {
   border-bottom: 1px solid #ffffff;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
+  padding-bottom: 17px;
 }
 
 .patient-info .border-bottom {
