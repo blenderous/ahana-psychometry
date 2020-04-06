@@ -429,7 +429,16 @@ form.depression-metrics p .btn{
   }
 }
 
+.patient-info .conditions-list .selected-value {
+  text-align: left;
+}
+
 .patient-info .conditions-list .selected-value .btn {
   display: inline-block;
   max-width: 100%;
+}
+
+.print-btn-container {
+  text-align: center;
+  padding: 20px 0;
 }

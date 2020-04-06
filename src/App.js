@@ -12,6 +12,7 @@ import Assessments from './components/assessments.component';
 import Assessment_01 from './components/assessments/assessment_01.component';
 import Assessment_02 from './components/assessments/assessment_02.component';
 import Assessment_03 from './components/assessments/assessment_03.component';
+import Assessment_04 from './components/assessments/assessment_04.component';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
               <Route path='/ahana-psychometry/assessments/01' component={ Assessment_01 } />
               <Route path='/ahana-psychometry/assessments/02' component={ Assessment_02 } />
               <Route path='/ahana-psychometry/assessments/03' component={ Assessment_03 } />
+              <Route path='/ahana-psychometry/assessments/04' component={ Assessment_04 } />
           </Switch>
         </div>
     </Router>

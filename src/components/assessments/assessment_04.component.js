@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 // import { Link } from 'react-router-dom';
-// import Dropdown from 'react-bootstrap/Dropdown';
 import {Entity} from "./Entity";
 
-export default class Assessment_03 extends Component {
+export default class Assessment_04 extends Component {
     constructor(props) {
         super(props);
 
@@ -17,7 +16,7 @@ export default class Assessment_03 extends Component {
     }
     render() {
         return (
-            <div className='container patient-info'>
+            <div className='container mania-scale'>
                 <h2>Brief Psychiatric Rating Scale</h2>
                     <div className="details-container row">
                         <form className="col-sm-6">
@@ -60,36 +59,3 @@ export default class Assessment_03 extends Component {
         )
     }
 }
-
-/* <Dropdown>
-    <Dropdown.Toggle className="btn btn-primary" variant="success" id="dropdown-basic">
-    Dropdown Button
-    </Dropdown.Toggle>  
-    <Dropdown.Menu>
-        <Dropdown.Item onSelect={this.handleSelect} href="#/">Not asessed</Dropdown.Item>
-        <Dropdown.Item href="#/">Another action</Dropdown.Item>
-        <Dropdown.Item href="#/">Something else</Dropdown.Item>
-        0 = Not assessed, 1 = Not present, 2 = Very mild, 3 = Mild, 4 = Moderate, 5 = Moderately severe, 6 = Severe, 7 = Extremely severe
-    </Dropdown.Menu>
-</Dropdown> */
-/* <select id="scale-1">
-    <option value="0">Not assessed</option>
-    <option value="1">Not present</option>
-    <option value="2">Very mild</option>
-    <option value="3">Mild</option>
-    <option value="4">Moderate</option>
-    <option value="5">Moderately severe</option>
-    <option value="6">Severe</option>
-    <option value="7">Extremely Severe</option>
-</select> */
-/* <Dropdown>
-    <Dropdown.Toggle variant="primary" id="dropdown-basic">
-        Dropdown Button
-    </Dropdown.Toggle>
-
-    <Dropdown.Menu>
-        <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-        <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-        <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-    </Dropdown.Menu>
-</Dropdown> */
