@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import ahanaLogo from '../logo-ahana.png';
 
 export default class Home extends Component {
     render() {
         return (
             <div className="vertically-center-outer">
                 <div className="vertically-center-middle">
-                    <div className="vertically-center-inner">
+                    <div className=""> {/* vertically-center-inner */}
                         {/* Links to various assessments */}
                         <div className="assessments container">
                             <p>Choose from the following assessments</p>
@@ -19,7 +20,7 @@ export default class Home extends Component {
                         </div>
                     </div>
                 </div>
-                <a href="/ahana-psychometry/" className="logo-link"><img src="/logo-ahana.png" alt="Ahana : Experience the exceptional care"/></a>
+                <a href="/ahana-psychometry/" className="logo-link"><img src={ahanaLogo} alt="Ahana : Experience the exceptional care"/></a>
             </div>
         )
     }

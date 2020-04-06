@@ -442,3 +442,9 @@ form.depression-metrics p .btn{
   text-align: center;
   padding: 20px 0;
 }
+
+/* =========================================== */
+
+span.bold {
+  font-weight: bold;
+}
