@@ -102,7 +102,7 @@ export default class Assessment_04 extends Component {
         if (filledAll) {
             console.log('filled all');
             localStorage.setItem('total', sum);
-            localStorage.setItem('assessment', 'becks-anxiety-inventory');
+            localStorage.setItem('assessment', 'asrm');
             // window.location.href = "/ahana-psychometry/index";
             this.props.history.push('/ahana-psychometry/create');
         }
@@ -121,47 +121,47 @@ export default class Assessment_04 extends Component {
                     <ul>    
                     <li>
                         <div className="question" id="question-1">
-                            <Answer className={this.isActive(0,1)} Id="question-01-answer-01" value="0" onClick={this.handleClick}>I do not feel happier or more cheerful than usual.</Answer>
-                            <Answer className={this.isActive(1,1)} Id="question-01-answer-02" value="1" onClick={this.handleClick}>I occasionally feel happier or more cheerful than usual.</Answer>
-                            <Answer className={this.isActive(2,1)} Id="question-01-answer-03" value="2" onClick={this.handleClick}>I often feel happier or more cheerful than usual.</Answer>
-                            <Answer className={this.isActive(3,1)} Id="question-01-answer-04" value="3" onClick={this.handleClick}>I feel happier or more cheerful than usual most of the time</Answer>
-                            <Answer className={this.isActive(4,1)} Id="question-01-answer-05" value="4" onClick={this.handleClick}>I feel happier or more cheerful than usual all of the time</Answer>
+                            <Answer className={this.isActive(1,1)} Id="question-01-answer-01" value="0" onClick={this.handleClick}>I do not feel happier or more cheerful than usual.</Answer>
+                            <Answer className={this.isActive(2,1)} Id="question-01-answer-02" value="1" onClick={this.handleClick}>I occasionally feel happier or more cheerful than usual.</Answer>
+                            <Answer className={this.isActive(3,1)} Id="question-01-answer-03" value="2" onClick={this.handleClick}>I often feel happier or more cheerful than usual.</Answer>
+                            <Answer className={this.isActive(4,1)} Id="question-01-answer-04" value="3" onClick={this.handleClick}>I feel happier or more cheerful than usual most of the time</Answer>
+                            <Answer className={this.isActive(5,1)} Id="question-01-answer-05" value="4" onClick={this.handleClick}>I feel happier or more cheerful than usual all of the time</Answer>
                         </div>
                     </li>
                     <li>
                         <div className="question" id="question-2">
-                            <Answer className={this.isActive(0,2)} Id="question-02-answer-01" value="0" onClick={this.handleClick}>I do not feel happier or more self-confident than usual.</Answer>
-                            <Answer className={this.isActive(1,2)} Id="question-02-answer-02" value="1" onClick={this.handleClick}>I occasionally feel happier or more self-confident than usual.</Answer>
-                            <Answer className={this.isActive(2,2)} Id="question-02-answer-03" value="2" onClick={this.handleClick}>I often feel more self-confident than usual.</Answer>
-                            <Answer className={this.isActive(3,2)} Id="question-02-answer-04" value="3" onClick={this.handleClick}>I frequently feel more self-confident than usual.</Answer>
-                            <Answer className={this.isActive(4,2)} Id="question-02-answer-05" value="3" onClick={this.handleClick}>Severely - it bothered me a lot</Answer>
+                            <Answer className={this.isActive(1,2)} Id="question-02-answer-01" value="1" onClick={this.handleClick}>I do not feel happier or more self-confident than usual.</Answer>
+                            <Answer className={this.isActive(2,2)} Id="question-02-answer-02" value="2" onClick={this.handleClick}>I occasionally feel happier or more self-confident than usual.</Answer>
+                            <Answer className={this.isActive(3,2)} Id="question-02-answer-03" value="3" onClick={this.handleClick}>I often feel more self-confident than usual.</Answer>
+                            <Answer className={this.isActive(4,2)} Id="question-02-answer-04" value="4" onClick={this.handleClick}>I frequently feel more self-confident than usual.</Answer>
+                            <Answer className={this.isActive(5,2)} Id="question-02-answer-05" value="5" onClick={this.handleClick}>Severely - it bothered me a lot</Answer>
                         </div>
                     </li>
                     <li>
                         <div className="question" id="question-3">
-                            <Answer className={this.isActive(0,3)} Id="question-03-answer-01" value="0" onClick={this.handleClick}>I do not need less sleep than usual.</Answer>
-                            <Answer className={this.isActive(1,3)} Id="question-03-answer-02" value="1" onClick={this.handleClick}>I occasionally need less sleep than usual.</Answer>
-                            <Answer className={this.isActive(2,3)} Id="question-03-answer-03" value="2" onClick={this.handleClick}>I often need less sleep than usual.</Answer>
-                            <Answer className={this.isActive(3,3)} Id="question-03-answer-04" value="3" onClick={this.handleClick}>I frequently need less sleep than usual.</Answer>
-                            <Answer className={this.isActive(4,3)} Id="question-03-answer-05" value="4" onClick={this.handleClick}>I can go all day and all night without any sleep and still not feel tired.</Answer>
+                            <Answer className={this.isActive(1,3)} Id="question-03-answer-01" value="1" onClick={this.handleClick}>I do not need less sleep than usual.</Answer>
+                            <Answer className={this.isActive(2,3)} Id="question-03-answer-02" value="2" onClick={this.handleClick}>I occasionally need less sleep than usual.</Answer>
+                            <Answer className={this.isActive(3,3)} Id="question-03-answer-03" value="3" onClick={this.handleClick}>I often need less sleep than usual.</Answer>
+                            <Answer className={this.isActive(4,3)} Id="question-03-answer-04" value="4" onClick={this.handleClick}>I frequently need less sleep than usual.</Answer>
+                            <Answer className={this.isActive(5,3)} Id="question-03-answer-05" value="5" onClick={this.handleClick}>I can go all day and all night without any sleep and still not feel tired.</Answer>
                         </div>
                     </li>
                     <li>
                         <div className="question" id="question-4">
-                            <Answer className={this.isActive(0,4)} Id="question-04-answer-01" value="0" onClick={this.handleClick}>I do not talk more than usual.</Answer>
-                            <Answer className={this.isActive(1,4)} Id="question-04-answer-02" value="1" onClick={this.handleClick}>I occasionally talk more than usual.</Answer>
-                            <Answer className={this.isActive(2,4)} Id="question-04-answer-03" value="2" onClick={this.handleClick}>I often talk more than usual.</Answer>
-                            <Answer className={this.isActive(3,4)} Id="question-04-answer-04" value="3" onClick={this.handleClick}>I frequently talk more than usual.</Answer>
-                            <Answer className={this.isActive(4,4)} Id="question-04-answer-04" value="4" onClick={this.handleClick}>I talk constantly and cannot be interrupted.</Answer>
+                            <Answer className={this.isActive(1,4)} Id="question-04-answer-01" value="1" onClick={this.handleClick}>I do not talk more than usual.</Answer>
+                            <Answer className={this.isActive(2,4)} Id="question-04-answer-02" value="2" onClick={this.handleClick}>I occasionally talk more than usual.</Answer>
+                            <Answer className={this.isActive(3,4)} Id="question-04-answer-03" value="3" onClick={this.handleClick}>I often talk more than usual.</Answer>
+                            <Answer className={this.isActive(4,4)} Id="question-04-answer-04" value="4" onClick={this.handleClick}>I frequently talk more than usual.</Answer>
+                            <Answer className={this.isActive(5,4)} Id="question-04-answer-04" value="5" onClick={this.handleClick}>I talk constantly and cannot be interrupted.</Answer>
                         </div>
                     </li>
                     <li>
                         <div className="question" id="question-5">
-                            <Answer className={this.isActive(0,5)} Id="question-05-answer-01" value="0" onClick={this.handleClick}>I have not been more active (either socially, sexually, at work, home or school) than usual.</Answer>
-                            <Answer className={this.isActive(1,5)} Id="question-05-answer-02" value="1" onClick={this.handleClick}>I have occasionally been more active than usual.</Answer>
-                            <Answer className={this.isActive(2,5)} Id="question-05-answer-03" value="2" onClick={this.handleClick}>I have often been more active than usual.</Answer>
-                            <Answer className={this.isActive(3,5)} Id="question-05-answer-04" value="3" onClick={this.handleClick}>I have frequently been more active than usual.</Answer>
-                            <Answer className={this.isActive(4,5)} Id="question-05-answer-04" value="4" onClick={this.handleClick}>I am constantly more active or on the go all the time.</Answer>
+                            <Answer className={this.isActive(1,5)} Id="question-05-answer-01" value="1" onClick={this.handleClick}>I have not been more active (either socially, sexually, at work, home or school) than usual.</Answer>
+                            <Answer className={this.isActive(2,5)} Id="question-05-answer-02" value="2" onClick={this.handleClick}>I have occasionally been more active than usual.</Answer>
+                            <Answer className={this.isActive(3,5)} Id="question-05-answer-03" value="3" onClick={this.handleClick}>I have often been more active than usual.</Answer>
+                            <Answer className={this.isActive(4,5)} Id="question-05-answer-04" value="4" onClick={this.handleClick}>I have frequently been more active than usual.</Answer>
+                            <Answer className={this.isActive(5,5)} Id="question-05-answer-05" value="5" onClick={this.handleClick}>I am constantly more active or on the go all the time.</Answer>
                         </div>
                     </li>
                 </ul>

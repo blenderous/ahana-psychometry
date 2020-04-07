@@ -58,6 +58,9 @@ export default class Index extends Component {
         else if (localStorage.getItem('assessment') === 'becks-anxiety-inventory') {
             return "A grand sum between 0 - 21 indicates very low anxiety. \n A grand sum between 22-35 indicates moderate anxiety. \n A grand sum that exeeds 36 is a potential cause for concern.";
         }
+        else {
+            return "";
+        }
     }
     getAssessment() {
         if (localStorage.getItem('assessment') === 'becks-depression-inventory') {
@@ -65,6 +68,9 @@ export default class Index extends Component {
         }
         else if (localStorage.getItem('assessment') === 'becks-anxiety-inventory') {
             return "Beck's Anxiety Inventory";
+        }
+        else if (localStorage.getItem('assessment') === 'asrm') {
+            return "Altman Self-Rating Mania Scale";
         }
     }
     handleSubmit(e) {
