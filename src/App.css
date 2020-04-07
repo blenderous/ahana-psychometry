@@ -448,3 +448,12 @@ form.depression-metrics p .btn{
 span.bold {
   font-weight: bold;
 }
+
+form.depression-metrics.mania-metrics ul {
+  padding-left: 25px;
+  list-style-position: outside;
+}
+
+form.depression-metrics.mania-metrics label {
+  border-radius: 5px;
+}
