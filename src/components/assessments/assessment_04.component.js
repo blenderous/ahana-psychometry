@@ -121,11 +121,11 @@ export default class Assessment_04 extends Component {
                     <ul>    
                     <li>
                         <div className="question" id="question-1">
-                            <Answer className={this.isActive(1,1)} Id="question-01-answer-01" value="0" onClick={this.handleClick}>I do not feel happier or more cheerful than usual.</Answer>
-                            <Answer className={this.isActive(2,1)} Id="question-01-answer-02" value="1" onClick={this.handleClick}>I occasionally feel happier or more cheerful than usual.</Answer>
-                            <Answer className={this.isActive(3,1)} Id="question-01-answer-03" value="2" onClick={this.handleClick}>I often feel happier or more cheerful than usual.</Answer>
-                            <Answer className={this.isActive(4,1)} Id="question-01-answer-04" value="3" onClick={this.handleClick}>I feel happier or more cheerful than usual most of the time</Answer>
-                            <Answer className={this.isActive(5,1)} Id="question-01-answer-05" value="4" onClick={this.handleClick}>I feel happier or more cheerful than usual all of the time</Answer>
+                            <Answer className={this.isActive(1,1)} Id="question-01-answer-01" value="1" onClick={this.handleClick}>I do not feel happier or more cheerful than usual.</Answer>
+                            <Answer className={this.isActive(2,1)} Id="question-01-answer-02" value="2" onClick={this.handleClick}>I occasionally feel happier or more cheerful than usual.</Answer>
+                            <Answer className={this.isActive(3,1)} Id="question-01-answer-03" value="3" onClick={this.handleClick}>I often feel happier or more cheerful than usual.</Answer>
+                            <Answer className={this.isActive(4,1)} Id="question-01-answer-04" value="4" onClick={this.handleClick}>I feel happier or more cheerful than usual most of the time</Answer>
+                            <Answer className={this.isActive(5,1)} Id="question-01-answer-05" value="5" onClick={this.handleClick}>I feel happier or more cheerful than usual all of the time</Answer>
                         </div>
                     </li>
                     <li>
@@ -152,7 +152,7 @@ export default class Assessment_04 extends Component {
                             <Answer className={this.isActive(2,4)} Id="question-04-answer-02" value="2" onClick={this.handleClick}>I occasionally talk more than usual.</Answer>
                             <Answer className={this.isActive(3,4)} Id="question-04-answer-03" value="3" onClick={this.handleClick}>I often talk more than usual.</Answer>
                             <Answer className={this.isActive(4,4)} Id="question-04-answer-04" value="4" onClick={this.handleClick}>I frequently talk more than usual.</Answer>
-                            <Answer className={this.isActive(5,4)} Id="question-04-answer-04" value="5" onClick={this.handleClick}>I talk constantly and cannot be interrupted.</Answer>
+                            <Answer className={this.isActive(5,4)} Id="question-04-answer-05" value="5" onClick={this.handleClick}>I talk constantly and cannot be interrupted.</Answer>
                         </div>
                     </li>
                     <li>
